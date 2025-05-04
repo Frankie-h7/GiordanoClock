@@ -1,0 +1,139 @@
+/* Reset base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  /* Colori principali */
+  :root {
+    --bg-color: #121212;
+    --accent-color: #d4af37;
+    --text-color: #f0f0f0;
+    --button-bg: #1e1e1e;
+    --button-hover: #2c2c2c;
+  }
+  
+  /* Contenitore principale */
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+  
+  .container {
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* Titolo */
+  .title {
+    color: var(--accent-color);
+    margin-bottom: 20px;
+    font-size: 2rem;
+  }
+  
+  /* Tab di navigazione */
+  .tabs {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+  }
+  
+  .tab-button {
+    flex: 1;
+    padding: 10px;
+    background-color: var(--button-bg);
+    color: var(--text-color);
+    border: none;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s ease;
+    font-weight: bold;
+  }
+  
+  .tab-button.active {
+    border-bottom: 2px solid var(--accent-color);
+    color: var(--accent-color);
+  }
+  
+  .tab-button:active {
+    transform: scale(0.95);
+  }
+  
+  /* Contenuti tab */
+  .tab-content {
+    display: none;
+  }
+  
+  .tab-content.active {
+    display: block;
+  }
+  
+  /* Display dell'orologio, cronometro e timer */
+  .time-display {
+    font-size: 2.5rem;
+    margin: 20px 0;
+    letter-spacing: 2px;
+  }
+  
+  /* Controlli */
+  .controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .controls button {
+    padding: 10px 20px;
+    background-color: var(--button-bg);
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.1s ease, background-color 0.2s;
+  }
+  
+  .controls button:hover {
+    background-color: var(--button-hover);
+  }
+  
+  .controls button:active {
+    transform: scale(0.92);
+  }
+  
+  /* Input per il timer */
+  #timer-minutes,
+  #timer-seconds {
+    width: 48%;
+    padding: 10px;
+    margin: 5px 1%;
+    background-color: var(--button-bg);
+    color: var(--text-color);
+    border: 1px solid var(--accent-color);
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  /* Responsive */
+  @media (max-width: 480px) {
+    .time-display {
+      font-size: 2rem;
+    }
+  
+    .tab-button {
+      font-size: 0.9rem;
+    }
+  
+    .controls button {
+      flex: 1 1 45%;
+    }
+  }  
